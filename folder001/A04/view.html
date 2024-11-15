@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Character Details</title>
+    <link rel="icon" type="image/x-icon" href="img-rm/logorm.jpeg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,83 +12,132 @@
     <style>
       body {
         background-color: #727276;
-        padding-top: 70px;
         color: #fff;
+        padding-top: 80px; /* Adds space for fixed navbar */
       }
       .card {
         background-color: #303032;
         color: #fff;
         border-radius: 15px;
-        margin-top: 20px;
+        margin-top: 30px;
+      }
+      .backBtn {
+        background-color: #303032;
+        border: 1px solid #97ce4c;
+        margin-bottom: 40px;
+      }
+      .backBtn:hover {
+        box-shadow: 0 0 10px 3px #97ce4c;
       }
       .imgContainer {
-        max-width: 100%;
         padding: 20px;
-        padding-top: 80px;
         border-color: #97ce4c;
+        border-radius: 20px;
+        text-align: center;
       }
-      .badge-status {
-        font-size: 0.9em;
-        padding: 0.5em;
+      .imgContainer img {
+        border-radius: 20px;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      #characterName {
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: bold;
+      }
+      #characterStatus {
+        font-size: 20px;
+        background-color: #97ce4c;
+        color: white;
+        border-radius: 20px;
+        padding: 5px 10px;
+      }
+      #characterEpisodes {
+        color: #9fded5;
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 5px;
+      }
+      .card-body {
+        padding: 20px;
+        background-color: #303032;
+        border-radius: 10px;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top ">
       <div
-        class="container-fluid d-flex justify-content-between align-items-center"
+        class="container-fluid d-flex justify-content-between align-items-center "
       >
-        <a class="navbar-brand text-light" href="#">Rick and Morty</a>
+        <a class="navbar-brand text-light " href="index.html">Rick and Morty</a>
         <div class="d-flex align-items-center">
           <ul class="navbar-nav me-3">
             <li class="nav-item">
-              <a class="nav-link btn-outline-secondary text-light" href="#"
-                >Home</a
-              >
+              <a class="nav-link btn-outline-secondary text-light" href="#">Home</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container d-flex justify-content-center mt-5">
-      <div class="card" style="max-width: 800px">
+    <div class="container mt-5 mb-3">
+      <div class="row text-center">
+        <div class="col">
+          <h1 class="display-3 fw-bold text-light mb-4">
+            Character Information
+          </h1>
+          <button id="backButton" class="btn btn-lg backBtn text-light">
+            Back
+          </button>
+        </div>
+      </div>
+
+      <!-- Character Card -->
+      <div class="card" style="max-width: 800px; margin: 0 auto">
         <div class="row g-0">
           <div
-            class="col-md-4 d-flex justify-content-center align-items-center"
+            class="col-md-4 d-flex justify-content-center align-items-center imgContainer"
           >
             <img
               id="characterImage"
               src=""
               alt="Character Image"
-              class="img-fluid rounded-start"
+              class="img-fluid rounded-3"
             />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h1 id="characterName" class="card-title">Loading...</h1>
-              <span id="characterStatus" class="badge badge-status"></span>
-              <p id="characterSpecies" class="mt-3"></p>
-              <p id="characterGender"></p>
-              <p id="characterOrigin"></p>
-              <p id="characterLocation"></p>
-              <p class="mt-3 fw-bold">Episodes:</p>
-              <p id="characterEpisodes"></p>
+              <h2 id="characterName" class="card-title" style="color:#97ce4c">Loading...</h2>
+              <span id="characterStatus" class="badge badge-status mb-0"></span>
+
+              <div
+                class="my-3"
+                style="border: 1px solid #97ce4c; padding: 10px"
+              >
+                <p id="characterSpecies" class="fw-semibold mb-1"></p>
+                <p id="characterGender" class="fw-semibold mb-1"></p>
+                <p id="characterOrigin" class="fw-semibold mb-1"></p>
+                <p id="characterLocation" class="fw-semibold mb-0"></p>
+              </div>
+
+              <div
+                class="col-12 mt-3"
+                style="border: 1px solid #f0e14a; padding: 10px"
+              >
+                <p class="mb-0">Episodes:</p>
+                <p id="characterEpisodes" class="text mb-0"></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container d-flex justify-content-center mt-3">
-      <a id="nextCharacterBtn" href="#" class="btn btn-primary"
-        >Next Character</a
-      >
-    </div>
-
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      let characterId = parseInt(urlParams.get("characterId"));
+      let characterId = parseInt(urlParams.get("characterId")) || 1;
 
       const getCharacterDetails = async () => {
         try {
@@ -132,16 +182,16 @@
           );
           document.getElementById("characterEpisodes").innerText =
             episodes.join(", ");
-
-          document.getElementById("nextCharacterBtn").href = `?characterId=${
-            characterId + 1
-          }`;
         } catch (error) {
           document.getElementById("characterName").innerText =
             "Character not found";
           console.error(error);
         }
       };
+
+      document.getElementById("backButton").addEventListener("click", () => {
+        window.history.back();
+      });
 
       getCharacterDetails();
     </script>
