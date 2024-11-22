@@ -17,56 +17,50 @@
     />
     <style>
       body {
-        background-color: #1c1c3a;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
       }
 
       .vidcontainer {
-        height: 100vh;
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
         width: 100%;
         overflow: hidden;
-        position: relative;
       }
 
       .video {
-        width: 4000px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        pointer-events: none;
-        margin-left: 50%;
-        transform: translate(-50%);
+        border: none;
+      }
+
+      .bannercolor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(4, 60, 93, 0.78);
+        z-index: 1;
       }
 
       .bannertext {
-        text-align: center;
-        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: "Times New Roman", Times, serif;
         font-weight: bold;
-        color: #ff6a00;
+        color: #997b1b;
         font-size: 10vw;
+        text-align: center;
         white-space: nowrap;
-      }
-
-      .bannercolor {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0px;
-        background-color: rgba(28, 28, 58, 0.7);
-      }
-
-      .bannerpic {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        z-index: 1;
-      }
-
-      .bannerpic img {
-        width: 100%;
-        height: auto;
+        z-index: 2;
       }
 
       .get-started-btn {
@@ -74,17 +68,71 @@
         top: 70%;
         left: 50%;
         transform: translateX(-50%);
-        padding: 15px 30px;
+        padding: 10px 15px;
         font-size: 1.5rem;
         background-color: #ff6a00;
-        color: white;
+        color: rgb(255, 255, 255);
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        z-index: 3;
       }
 
       .get-started-btn:hover {
-        background-color: #e65c00;
+        background-color: #a78e29;
+        color: #043d5d;
+      }
+
+      .bannerpic {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+      }
+
+      .bannerpic img {
+        width: 100%;
+        height: auto;
+      }
+
+      .card {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card h2 {
+        color: #043d5d;
+      }
+
+      .card h6 {
+        color: #444648;
+      }
+
+      .card .image-container {
+        margin-bottom: 15px;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .carousel-item img {
+        object-fit: cover;
+        height: 400px;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #a78e29;
+      }
+
+      .container {
+        margin-top: 100px;
       }
     </style>
   </head>
@@ -95,7 +143,7 @@
       style="background-color: transparent"
     >
       <div class="container-fluid">
-        <a class="navbar-brand px-3 py-2" href="#" style="color: white">
+        <a class="navbar-brand px-3 py-2" href="#" style="color: #ffe57c">
           Coraline
         </a>
       </div>
@@ -104,8 +152,6 @@
     <div class="vidcontainer">
       <iframe
         class="video"
-        width="1424"
-        height="646"
         src="https://www.youtube.com/embed/m9bOpeuvNwY?si=wbpqYgZ549zFHfbS&start=9&end=142&autoplay=1&mute=1&loop=1&playlist=m9bOpeuvNwY"
         title="YouTube video player"
         frameborder="0"
@@ -113,26 +159,286 @@
         referrerpolicy="no-referrer"
         allowfullscreen
       ></iframe>
+
       <div class="bannercolor"></div>
       <div class="bannertext">CORALINE</div>
-
-      <button class="btn btn-outline-secondary btn-lg get-started-btn">
-        Trivia
-      </button>
+      <div class="d-flex justify-content-center">
+        <a href="#spoiler" class="btn get-started-btn"> Spoil Me! </a>
+      </div>
 
       <div class="bannerpic">
         <img src="../A05.1(Embed)/img-cora/bg.png" />
       </div>
     </div>
 
-    <div class="container">
+    <div id="spoiler" class="container">
       <div class="row my-5">
-        <div class="col">
-          <div class="card p-3 my-3">Coraline Information</div>
-          <div class="card">ahiahihia</div>
+        <div class="col-md-4 mb-4">
+          <div class="image-container">
+            <img
+              src="../A05.1(Embed)/img-cora/officialP.jpeg"
+              alt="Coraline Image"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="card p-3 my-3">
+            <h2>Coraline</h2>
+            <h6>
+              <em
+                >PG, Released Feb 6, 2009, 1h 40m, Kids &
+                Family/Fantasy/Animation</em
+              >
+            </h6>
+          </div>
+          <h1 style="color: #f5cc46">Movie Information</h1>
+          <div class="card p-3 my-3">
+            <h4 style="color: #997b1b">Synopsis</h4>
+            <h6 style="color: #997b1b">
+              <em>
+                While exploring her new home, a girl named Coraline (Dakota
+                Fanning) discovers a secret door, behind which lies an alternate
+                world that closely mirrors her own but, in many ways, is better.
+                She rejoices in her discovery, until Other Mother (Teri Hatcher)
+                and the rest of her parallel family try to keep her there
+                forever. Coraline must use all her resources and bravery to make
+                it back to her own family and life.</em
+              >
+            </h6>
+            <br /><br />
+            <div class="row">
+              <div class="col">
+                <h6>Director: <em> Henry Selick </em></h6>
+                <h6>
+                  Producer:
+                  <em>
+                    Bill Mechanic, Claire Jennings, Henry Selick, Mary Sandell
+                  </em>
+                </h6>
+                <h6>Screenwritter: <em> Henry Selick </em></h6>
+                <h6>Distributor: <em> Focus Features </em></h6>
+                <h6>
+                  Production Co. : <em> Laika, Focus Features, Pandemonium</em>
+                </h6>
+                <h6>Genre: <em> Kids & Family, Fantasy, Animation </em></h6>
+                <h6>Original Language: <em> English </em></h6>
+                <h6>
+                  Release Date (Theaters): <em> February 06, 2009 ,Wide </em>
+                </h6>
+                <h6>Re-release Date (Theaters): <em> October 31, 2024 </em></h6>
+                <h6>Release Date (Streaming): <em> Feb 12, 2014</em></h6>
+                <h6>Box Office (Gross USA): <em> $94.2M </em></h6>
+                <h6>Runtime: <em> 1h 40m </em></h6>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="row p-5 border-radius">
+      <div class="col">
+        <h1 style="color: #f5cc46">Gallery</h1>
+        <div id="carouselGallery" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img
+                src="../A05.1(Embed)/img-cora/blueTunnel.png"
+                class="d-block w-100"
+                alt="Tunnel"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/tunnel1.png"
+                class="d-block w-100"
+                alt="tunne1"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/button_eyes.png"
+                class="d-block w-100"
+                alt="button"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/realdad.jpeg"
+                class="d-block w-100"
+                alt="realdad"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/coat3.jpeg"
+                class="d-block w-100"
+                alt="coat3"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/withBoy2.jpeg"
+                class="d-block w-100"
+                alt="boy"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/real fam.jpeg"
+                class="d-block w-100"
+                alt="real fam"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/puppet.jpeg"
+                class="d-block w-100"
+                alt="puppet"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/realmom.jpeg"
+                class="d-block w-100"
+                alt="real mom"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../A05.1(Embed)/img-cora/fakemom.jpeg"
+                class="d-block w-100"
+                alt="fake mom"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselGallery"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden" style="color: #a78e29">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselGallery"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden" style="color: #a78e29">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5" id="spoiler-playlist">
+      <h2
+        class="text-center mb-5"
+        style="
+          color: #f5cc46;
+          font-size: 2.8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        "
+      >
+        Spoiler Playlist
+      </h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col mb-4">
+          <div class="card border-light shadow-lg h-100 rounded-3 hover-card">
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="color: #043d5d; font-size: 1.3rem; font-weight: bold"
+              >
+                "Sassy Coraline" Clip - Coraline | DocumentedByRin
+              </h5>
+              <p class="card-text" style="color: #444; font-size: 1rem">
+                Watch the sassy and cheeky side of Coraline in this fun clip
+                from the movie.
+              </p>
+              <iframe
+                width="100%"
+                height="auto"
+                style="aspect-ratio: 16/9; border-radius: 10px"
+                src="https://www.youtube.com/embed/DtGO8qzSngU?si=P_TZ_080hx1wgP0e"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="card border-light shadow-lg h-100 rounded-3 hover-card">
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="color: #043d5d; font-size: 1.3rem; font-weight: bold"
+              >
+                "Jumping Mouse Circus" Clip - Coraline | LAIKA Studios
+              </h5>
+              <p class="card-text" style="color: #444; font-size: 1rem">
+                Enjoy this iconic scene from the movie, featuring the mystical
+                jumping mouse circus!
+              </p>
+              <iframe
+                width="100%"
+                height="auto"
+                style="aspect-ratio: 16/9; border-radius: 10px"
+                src="https://www.youtube.com/embed/lWMsWXUljIg?si=UgLjYQjoaVenO_Y9&amp;controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="card border-light shadow-lg h-100 rounded-3 hover-card">
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="color: #043d5d; font-size: 1.3rem; font-weight: bold"
+              >
+                "You’ll Never Leave" - Coraline vs. Other Mother | LAIKA Studios
+              </h5>
+              <p class="card-text" style="color: #444; font-size: 1rem">
+                Coraline challenges the Other Mother in a battle of wits and
+                courage in this bone-chilling clip from Coraline.
+              </p>
+              <iframe
+                width="100%"
+                height="auto"
+                style="aspect-ratio: 16/9; border-radius: 10px"
+                src="https://www.youtube.com/embed/Sny4Rvr5Yag?si=_rcbzqmYMtoNnbiQ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center" style="color: #997b1b">
+      <p>© 2024 Anne Kathlyn M. Medrana. All rights reserved.</p>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

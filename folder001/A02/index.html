@@ -61,7 +61,8 @@
       <div
         class="d-flex align-items-end"
         style="
-          background: url('../A02/img/hdtokyo.jpg') no-repeat center center/cover;
+          background: url('../A02/img/hdtokyo.jpg') no-repeat center
+            center/cover;
           min-height: 100vh;
           padding: 20px;
         "
@@ -69,13 +70,40 @@
         <div
           class="container my-5 text-dark"
           style="
-            background: rgba(255, 248, 156, 0.7);
+            background: rgba(255, 251, 188, 0.857);
             padding: 10px;
             border-radius: 8px;
           "
         >
-          <h1 class="fw-bold">TOKYO</h1>
+        <div  class="p-3" style=" color:white ; background-color:  rgba(148, 170, 187,1.9);">
+          <h1 class="fw-bold display-3">TOKYO</h1>
           <h4>Japan's Vibrant Capital</h4>
+        </div>
+          <a
+            class="weatherwidget-io"
+            href="https://forecast7.com/en/35d69139d69/tokyo/"
+            data-label_1="TOKYO"
+            data-label_2="WEATHER"
+            data-font="Verdana"
+            data-icons="Climacons Animated"
+            data-theme="mountains"
+            data-basecolor="rgba(255, 248, 156, 0)"
+            data-suncolor="#fef7a6"
+            data-mooncolor="#e8e8e8"
+            >TOKYO WEATHER</a
+          >
+          <script>
+            !(function (d, s, id) {
+              var js,
+                fjs = d.getElementsByTagName(s)[0];
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://weatherwidget.io/js/widget.min.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            })(document, "script", "weatherwidget-io-js");
+          </script>
         </div>
       </div>
     </section>
@@ -268,7 +296,11 @@
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="card h-100 shadow">
-              <img src="../A02/img/odaiba.jpeg" class="card-img-top" alt="Odaiba" />
+              <img
+                src="../A02/img/odaiba.jpeg"
+                class="card-img-top"
+                alt="Odaiba"
+              />
               <div class="card-body">
                 <h4 class="card-title">Odaiba</h4>
                 <p class="card-text">
