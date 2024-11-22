@@ -12,6 +12,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="folder001/A03/style.css" />
+    <script src="https://unpkg.com/feedbackfin@^1" defer></script>
+    <script>
+      window.feedbackfin = { config: {}, ...window.feedbackfin };
+      window.feedbackfin.config.url = "https://rowy-hooks.run.app/wh/...";
+    </script>
   </head>
 
   <body id="body" data-bs-theme="light">
@@ -19,48 +24,37 @@
       <nav class="navbar navbar-expand-lg shadow fixed-top custom-nav">
         <div class="container-fluid">
           <h5 style="color: #f8f9fa">My Portfolio</h5>
-        <button
-          class="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-          <script
-            type="text/javascript"
-            src="https://www.free-counters.org/count/gpbb"
-          ></script>
-          <br />
-          <script
-            type="text/javascript"
-            src="https://whomania.com/ctr?id=ba2055bab09dde7b337dc0d51a8e6464f9a6e498"
-          ></script> &nbsp;
-          
           <button
-            class="btn btn-outline-secondary text-light btn-Dmode"
-            id="btnColor"
-            onclick="changeColorMode()"
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            Dark Mode
+            <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <button
+              class="btn btn-outline-secondary text-light btn-Dmode"
+              id="btnColor"
+              onclick="changeColorMode()"
+            >
+              Dark Mode
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
-
+      </nav>
     <main>
       <section
       id="home"
@@ -159,6 +153,25 @@
           </div>
         </div>
       </div>
+
+      <section id="spotify" class="py-5" style="margin-top: 100px;">
+        <div class="container text-center">
+          <h2 class="mb-4 fw-bold nameColor">Listen to My Favorite Playlist!</h2>
+          <p class="mb-4 custom-text-color"><em>Check out some of my favorite tracks and get inspired.</em></p>
+          <div class="spotify-container">
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/playlist/4FLKkgcu5lLu0a8hTB2Gu1?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </div>
 
     <section
@@ -208,6 +221,7 @@
         <a href="mailto:annekathlynmedrana03@gmail.com" class="btn btn-custom">
           Send a message!
         </a>
+        <button  class="btn btn-custom" data-feedbackfin-button>Feedback</button>
     </section>
     </main>
 
