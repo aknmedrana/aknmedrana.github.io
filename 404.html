@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404-akn-omg</title>
+    <link
+      rel="icon"
+      href="../aknmedrana.github.io/folder001/404-img/icon.jpeg"
+      type="image/x-icon"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #393c3f;
+      }
+
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        box-shadow: none;
+      }
+
+      .navbar .navbar-brand,
+      .navbar .navbar-nav .nav-link {
+        color: #fff;
+      }
+
+      .navbar .navbar-nav .nav-item .nav-link:hover {
+        color: #d9b671;
+      }
+
+      body.dark {
+        background-color: #181818;
+        color: #f8f9fa;
+      }
+
+      .navbar.dark {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar.dark .navbar-brand,
+      .navbar.dark .navbar-nav .nav-link {
+        color: #f8f9fa;
+      }
+
+      .navbar.dark .navbar-nav .nav-item .nav-link:hover {
+        color: #d9b671;
+      }
+
+      .imgContainer {
+        width: 90%;
+        max-width: 600px;
+      }
+
+      .custom-text-color {
+        color: #393c3f;
+      }
+
+      .btn-custom {
+        background-color: #d9b671;
+        color: #fff;
+        border-radius: 25px;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        background-color: #c89d5e;
+      }
+
+      #home {
+        background: url("../aknmedrana.github.io/folder001/404-img/bg.png")
+          no-repeat center center;
+        background-size: cover;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content-container {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .content-container img {
+        max-width: 100%;
+        height: auto;
+      }
+      .flicker {
+        animation: flicker 1s infinite;
+      }
+
+      @keyframes flicker {
+        0% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.3;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          Anne Kathlyn <span style="color: #c5eff4">Medrana</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../aknmedrana.github.io/index.html"
+                >Home</a
+              >
+            </li>
+          </ul>
+          <button
+            class="btn btn-outline-light ml-3"
+            id="btnColor"
+            onclick="changeColorMode()"
+          >
+            Dark Mode
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home">
+      <div class="container content-container">
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <img
+              src="../aknmedrana.github.io/folder001/404-img/comic404.png"
+              alt="404-img"
+              class="img-fluid imgContainer box-shadow"
+            />
+          </div>
+          <div class="col-12 col-md-6 text-container">
+            <div class="p-2">
+              <p class="display-2 flicker" style="font-weight: 700">
+                <em>OH NO!!!!</em>
+              </p>
+              <h4 class="mt-2 flicker">
+                <em>Page Not Found</em>
+              </h4>
+              <p class="mt-2">
+                <em>It looks like the page you're looking for doesn't exist.</em>
+              </p>
+              <div class="d-flex justify-content-center">
+                <a
+                  href="../aknmedrana.github.io/index.html"
+                  class="btn btn-custom"
+                  >Go Back to Home</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      var colorMode = localStorage.getItem("theme") || "light";
+
+      function setTheme(theme) {
+        document.body.classList.toggle("dark", theme === "dark");
+        document.getElementById("btnColor").innerHTML =
+          theme === "dark" ? "Light Mode" : "Dark Mode";
+        localStorage.setItem("theme", theme);
+      }
+
+      setTheme(colorMode);
+
+      function changeColorMode() {
+        colorMode = colorMode === "light" ? "dark" : "light";
+        setTheme(colorMode);
+      }
+    </script>
+  </body>
+</html>
